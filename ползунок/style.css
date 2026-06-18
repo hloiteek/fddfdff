@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #fff;
+}
+
+.news {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.head h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.head p {
+  color: #8b5cf6;
+  font-size: 14px;
+  cursor: pointer;
+}
+.head p:hover {
+  text-decoration: underline;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s ease;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.card {
+  width: 410px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: center center;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.card img {
+  width: 410px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: border-radius 0.3s ease;
+}
+.card .info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+}
+.card .info p {
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.card .info h2 {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.card:hover img {
+  border-radius: 8px 8px 0 0;
+}
+.card:hover .info {
+  max-height: 120px;
+  opacity: 1;
+  padding: 16px 20px 20px;
+}
+
+.line {
+  width: 370px;
+  height: 60px;
+  margin: 24px auto 0;
+  position: relative;
+  cursor: grab;
+}
+.line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  transform: translateY(-50%);
+}
+
+.thumb {
+  width: 40px;
+  height: 6px;
+  background: #84cc16;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+  cursor: grab;
+}
+.thumb:active {
+  cursor: grabbing;
+}/*# sourceMappingURL=style.css.map */
